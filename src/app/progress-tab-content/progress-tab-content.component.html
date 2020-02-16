@@ -1,0 +1,38 @@
+<div class="mat-elevation-z8" [ngStyle]="{'height': scrHeight}">
+  <table mat-table [dataSource]="dataSource">
+    <!-- Item Column -->
+
+    <ng-container matColumnDef="project">
+      <th mat-header-cell *matHeaderCellDef> Project </th>
+      <td mat-cell *matCellDef="let element"> {{element.project}} </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="task">
+      <th mat-header-cell *matHeaderCellDef> Task </th>
+      <td mat-cell *matCellDef="let element"> {{element.task}} </td>
+      <td mat-footer-cell *matFooterCellDef> Total Hours </td>
+    </ng-container>
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef> Hours </th>
+      <td mat-cell *matCellDef="let element" width='120px'> 
+        <button *ngIf="!element.isInProgress" (click)='startTimer(element.id)' mat-stroked-button color="primary"><mat-icon>play_circle_outline</mat-icon>{{element.duration*1000 | date: 'HH:mm:ss':'GMT'}}</button>
+        <button *ngIf="element.isInProgress" (click)='pauseTimer(element.id)' mat-stroked-button color="primary"><mat-icon>pause_circle_outline</mat-icon>{{element.duration*1000 | date: 'HH:mm:ss':'GMT'}}</button> 
+      </td>
+      <td mat-footer-cell *matFooterCellDef> {{getTotalDuration()*1000 | date: 'HH:mm:ss':'GMT'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="star">
+      <th mat-header-cell *matHeaderCellDef width='10px'></th>
+      <td mat-cell *matCellDef="let element" width='10px'> 
+        <div style="display: inline-block; *display: inline; zoom: 1; vertical-align: top; padding-top: 5px;">
+          <mat-icon (click)='pauseTimer(element.id)'>more_vert</mat-icon>
+        </div>
+      </td>
+      <td mat-footer-cell *matFooterCellDef width='10px'></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+  </table>
+</div>

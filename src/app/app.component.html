@@ -1,0 +1,78 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Basic dropdown<span class="caret"></span></a>
+              <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                  <div class="divider dropdown-divider"></div>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+              </div>
+          </li>
+
+      </ul>
+      <!-- Links -->
+
+<!-- Search form -->
+<ul class="navbar-nav ml-auto nav-flex-icons">
+  <li class="nav-item avatar dropdown" dropdown>
+    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" style="height: 50px; padding: 0px;" mdbWavesEffect>
+      <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0 custom-profile"></a>
+    <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+    </div>
+  </li>
+</ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+<div>
+  <mat-tab-group mat-stretch-tabs class="mat-elevation-z4 custom-stretched-tab">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">alarm</mat-icon>
+        <span class="tab-name">In Progress</span>
+      </ng-template>
+      <app-progress-tab-content></app-progress-tab-content>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">alarm_on</mat-icon>
+        <span class="tab-name">Completed</span>
+      </ng-template>
+      Content 1
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">alarm_off</mat-icon>
+        <span class="tab-name">Snoozed</span>
+      </ng-template>
+      Content 1
+    </mat-tab>
+  </mat-tab-group>  
+</div>
