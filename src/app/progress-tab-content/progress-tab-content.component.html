@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8" [ngStyle]="{'height': scrHeight}">
-  <table mat-table [dataSource]="dataSource">
+  <table mat-table [dataSource]="dataSource | async">
     <!-- Item Column -->
 
     <ng-container matColumnDef="project">
@@ -36,3 +36,4 @@
     <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
   </table>
 </div>
+<button (click)='getData()'>HI</button>
