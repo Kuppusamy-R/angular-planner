@@ -13,4 +13,12 @@ export class TaskService {
   getTask() : Observable<Task[]> {
     return this.tasks;
   }
+
+  startTimer(id: number) {
+    this.socket.emit('startTimer',{id: id});
+  }
+
+  pauseTimer(time: number) {
+    this.socket.emit('pauseTimer', {time: time});
+  }
 }

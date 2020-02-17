@@ -5,4 +5,5 @@ export interface Task {
     assinger: string;
     duration: number;
     isInProgress: boolean;
+    lastStartTime: Date;
 }

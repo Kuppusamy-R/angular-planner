@@ -14,3 +14,30 @@ tr.mat-footer-row {
 .mat-table-sticky {
   border-top: 1px solid #e0e0e0;
 }
+
+.total-hours-button{
+  padding: 0px 28px;
+}
+
+.more-options {
+  display: inline-block; 
+  *display: inline; zoom: 1; 
+  vertical-align: top; 
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.project{
+  padding: 0px 5px;
+  text-align: center;
+}
+
+.task{
+  padding: 0px 5px;
+}
+
+.table-header{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
