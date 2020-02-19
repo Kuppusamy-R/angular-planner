@@ -12,7 +12,10 @@ import {Task} from '../models/task';
 @Component({
   selector: 'app-progress-tab-content',
   templateUrl: './progress-tab-content.component.html',
-  styleUrls: ['./progress-tab-content.component.scss']
+  styleUrls: ['./progress-tab-content.component.scss'],
+  animations: [
+    // animation triggers go here
+  ]
 })
 export class ProgressTabContentComponent implements OnInit {
   dataSource: Observable<Task[]>;
